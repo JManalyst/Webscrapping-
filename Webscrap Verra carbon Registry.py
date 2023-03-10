@@ -102,17 +102,19 @@ try:
     print("Page loaded! Now waiting to download...")
 
     #get the downloaded file and rename it to the name of your choice
-    downloaded_file = "C:\\Users\john.wambugu\\Burn Manufacturing\\Marketing - Business Intelligence\\BI Automations 2020\\John\\Carbon Webscrapping\\vcus.xlsx"
-    dest_path = "C:\\Users\john.wambugu\\Burn Manufacturing\\Marketing - Business Intelligence\\BI Automations 2020\\John\\Carbon Webscrapping\Verra Active.xlsx"
+    downloaded_file = "\\vcus.xlsx"
+    dest = \\Verra Active.xlsx"
     try:
         os.remove(dest_path)
     except:
         print("No previous file found")
     while os.path.isfile(downloaded_file) == False:
         time.sleep(1)
-    os.rename(downloaded_file, dest_path)
+    os.rename(downloaded_file, dest)
     print("Operaton succeful!")
     driver.close()
+    #send email upon succesful completion
     send_email("-recipient email-", "Webscrapping Succesful", "The task has been completed sucessfully")
 except:
+    #send email in case script fails to run successfully
     send_email("-recpient email-", "Webscrapping Failed", "The task failed. Please re-check the code for errors.")
