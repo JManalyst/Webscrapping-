@@ -5,9 +5,9 @@ Created on Thu Sep  8 12:03:31 2022
 @author: john.wambugu
 """
 #Import Relevant Libraries
-#Make sure to have selenium installed 
+#MEnsure you have selenium installed 
 #You can use pip install selenium on the terminal
-#Also make sure to have downloaded the chrome websdriver & add it to a folder preferably in the prorgram files > chrome >application as specified laater on this script
+#Ensure you have downloaded the chrome web driver & add it to a folder preferably in the program files > chrome >application as specified later on this script
 #Important to note that the chrome webdriver and the chrome version to be used are compatible, otherwise the browser won't launch. To be sure, just download the latest versions of both.
 from selenium import webdriver 
 import time
@@ -29,8 +29,7 @@ import os
 
 #define a function to send email
 def send_email(email_recipient, email_subject, email_message):
-    email_sender = "-Your email adress-"
-
+    email_sender = "-Sender email address-"
     msg = MIMEMultipart()
     msg['From'] = email_sender
     msg['To'] = email_recipient
@@ -53,13 +52,13 @@ try:
     # we can also define the path that we want to keep our downloads (if we have to):
     options = webdriver.ChromeOptions()
     options.add_experimental_option ("prefs", {
-    "download.default_directory": "-Your preffered donwload folder",
+    "download.default_directory": "-Your preffered download folder",
     "download.prompt_for_download": False,
     "download.directory_upgrade": True,
     "safebrowsing.enabled": False,
-    "safebrowsing.ebabled": "false"})
+    "safebrowsing.enabled": "false"})
     
-    #Open chrome browser
+    #Open Chrome browser
     driver = webdriver.Chrome(executable_path =  "C:\Program Files\Google\Chrome\Application\chromedriver.exe", options= options); 
 
     ##Navigate Login using the link
